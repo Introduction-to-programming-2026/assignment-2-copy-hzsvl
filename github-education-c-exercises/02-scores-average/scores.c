@@ -1,24 +1,30 @@
 #include <cs50.h>
 #include <stdio.h>
 
+const int N = 3;
+
+float average(int length, int array[]);
+
 int main(void)
 {
-    int n;
+    int scores[N];
 
-    // get positive number
-    do
+    for (int i = 0; i < N; i++)
     {
-        n = get_int("Height: ");
+        scores[i] = get_int("Score: ");
     }
-    while (n < 1);
 
-    // print pyramid
-    for (int i = 1; i <= n; i++)
+    printf("Average: %.2f\n", average(N, scores));
+}
+
+float average(int length, int array[])
+{
+    int sum = 0;
+
+    for (int i = 0; i < length; i++)
     {
-        for (int j = 0; j < i; j++)
-        {
-            printf("#");
-        }
-        printf("\n");
+        sum += array[i];
     }
+
+    return (float) sum / length;
 }
