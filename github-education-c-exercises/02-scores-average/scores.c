@@ -12,14 +12,24 @@ int main(void)
     int scores[N];
 
     // TODO: ask user for N scores and store them in scores[]
+    for (int i = 0; i < N; i++)
+    {
+         scores[i]= get_int("Score: ");
+    }
     // Example prompt: "Score: "
 
     // TODO: print average
-    // Example: printf("Average: %.2f\n", average(N, scores));
+    printf("Average %.2f\n", average(N, scores));
 }
 
 float average(int length, int array[])
 {
-    // TODO: compute and return average
-    return 0.0;
+int sum = 0;
+    
+for (int i =0 ; i < length; i++)
+ {   
+   sum+= array[i];
+ }
+    return (float) sum / length;
+
 }
